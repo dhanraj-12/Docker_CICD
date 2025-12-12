@@ -31,7 +31,7 @@ jobs:
             cd $DEPLOY_DIR
 
             echo "Downloading latest docker-compose file..."
-            curl -O https://raw.githubusercontent.com/dhanraj11/Docker_CICD/main/docker-compose.prod.yml
+            curl -O https://raw.githubusercontent.com/dhanraj-12/Docker_CICD/main/docker-compose.prod.yml
 
             echo "Pulling images..."
             docker compose -f docker-compose.prod.yml pull
