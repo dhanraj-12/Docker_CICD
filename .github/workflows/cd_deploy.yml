@@ -30,6 +30,8 @@ jobs:
 
             cd $DEPLOY_DIR
 
+            rm -f docker-compose.prod.yml
+
             echo "Downloading latest docker-compose file..."
             curl -O https://raw.githubusercontent.com/dhanraj-12/Docker_CICD/main/docker-compose.prod.yml
 
