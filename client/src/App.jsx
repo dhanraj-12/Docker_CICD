@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { api } from "./config";
+// import { api } from "./config";
 
 function App() {
   const [users, setUsers] = React.useState([]);
@@ -8,7 +8,7 @@ function App() {
   // Get all users
   const handleGet = async () => {
     try {
-      const res = await axios.get(`${api}`);
+      const res = await axios.get(`dhanraj.southeastasia.cloudapp.azure.com:3000/`);
       console.log(res.data);
       setUsers(res.data); // <-- update UI
     } catch (err) {
@@ -19,7 +19,7 @@ function App() {
   // Add a new user
   const handleAdd = async () => {
     try {
-      const res = await axios.post(`${api}/add-user`);
+      const res = await axios.post(`dhanraj.southeastasia.cloudapp.azure.com:3000/add-user`);
       console.log(res.data);
 
       // refresh list after adding
