@@ -9,7 +9,7 @@ services:
     image: dhanraj11/simple-testing-backend:latest
     container_name: backend_container
     ports:
-      - " 3000:3000"
+      - "3000:3000"
     depends_on:
       - mongo
   
