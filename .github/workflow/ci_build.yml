@@ -1,0 +1,43 @@
+name: Build and Pushes Docker Images
+on:
+  push:
+    branches:
+      - [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+  - name: Checkout code
+    uses: actions/Checkout@v2
+
+  - name: Login to DockerHub
+    uses: docker/login-action@v3
+    with: 
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      passwors: ${{ secrets.DOCKERHUB_TOKEN }}
+  
+  - name: Build and Push Backend Image
+    uses: docker/build-push-actions@v4
+    with: 
+      context: ./Backend
+      file: ../Docker/Dockerfile.backend
+      push: true
+      tags: | 
+        dhanraj11/simple-testing-backend:latest
+        dhanraj11/simple-testing-backend:${{ github.sha }}
+  
+  - name: Build and Push frontend Image
+    uses: docker/build-push-actions@v4
+    with: 
+      context: ./client
+      file: ../Docker/Dockerfile.frontend.prod
+      push: true
+      tags: | 
+        dhanraj11/simple-testing-frontend:latest
+        dhanraj11/simple-testing-frontend:${{ github.sha }}
+ 
+
+
+    
