@@ -16,16 +16,6 @@ const connectDB = async () => {
     console.log("DB connection attempt finished");
 };
 
-// const connectDB = async () => {
-//     try {
-//         await mongoose.connect("mongodb+srv://dj004786:VgFZDNsjJTJvatDi@web-dev-practice.9tnbr.mongodb.net/DevopDb?retryWrites=true&w=majority&appName=Web-Dev-practice/devops");
-//         console.log("Connected to MongoDB");
-//     } catch (err) {
-//         console.error(err);
-//     }
-//     console.log("DB connection attempt finished");
-// };
-
 
 connectDB();
 
