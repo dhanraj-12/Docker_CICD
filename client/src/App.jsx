@@ -8,7 +8,7 @@ function App() {
   // Get all users
   const handleGet = async () => {
     try {
-      const res = await axios.get(`dhanraj.southeastasia.cloudapp.azure.com:3000/`);
+      const res = await axios.get(`http://dhanraj.southeastasia.cloudapp.azure.com:3000/`);
       console.log(res.data);
       setUsers(res.data); // <-- update UI
     } catch (err) {
@@ -19,7 +19,7 @@ function App() {
   // Add a new user
   const handleAdd = async () => {
     try {
-      const res = await axios.post(`dhanraj.southeastasia.cloudapp.azure.com:3000/add-user`);
+      const res = await axios.post(`http://dhanraj.southeastasia.cloudapp.azure.com:3000/add-user`);
       console.log(res.data);
 
       // refresh list after adding
