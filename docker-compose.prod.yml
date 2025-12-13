@@ -1,7 +1,7 @@
 services: 
   mongo:
     image: mongo:latest
-    container_name: mongoDb
+    container_name: mongodb
     volumes:
       - mongo_data:/data/db
   
